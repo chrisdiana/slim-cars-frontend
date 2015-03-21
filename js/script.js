@@ -18,6 +18,29 @@ Zepto(function($){
 		findById($(this).data('identity'));
 	});
 
+	// Call new car function when button is clicked
+	$('#btnAdd').click(function() {
+		newCar();
+		return false;
+	});
+
+	// Call add car function when save button is clicked
+	$('#btnSave').click(function() {
+		if($('#id').val() == ''){
+			addCar();
+		}else{
+			updateCar();
+		}
+		return false;
+	});
+
+	// Hide delete button and empty out form
+	function newCar() {
+		$('#btnDelete').hide();
+		currentCar = {};
+		renderDetails(currentCar); // Display empty form
+	}
+
 	// Get all cars
 	function findAll() {
 		$.ajax({
@@ -53,6 +76,27 @@ Zepto(function($){
 		});
 	}
 
+	// Add new car
+	function addCar() {
+		console.log('addCar');
+		$.ajax({
+			type: 'POST',
+			url: rootURL + 'car',
+			dataType: 'json',
+			data: $.param(getForm()), // URI encode data for request
+			success: function(data, xhr, type, textStatus) {
+				console.log(data, xhr, type, textStatus);
+				alert('Car added successfully');
+				$('#btnDelete').show();
+				$('#id').val(data.id);
+				findAll(); // reload list
+			},
+			error: function(xhr, type, textStatus, errorThrown) {
+				console.log(xhr, type, errorThrown, textStatus);
+			}
+		});
+	}
+
 	// Render list of all cars
 	function renderList(data) {
 		$('#car-list li').remove();
@@ -74,6 +118,16 @@ Zepto(function($){
 			$('#make').val(car.make);
 			$('#model').val(car.model);
 		}
+	}
+
+	// Helper function to get form fields
+	function getForm() {
+		var car = {
+			'year': $('#year').val(),
+			'make': $('#make').val(),
+			'model': $('#model').val()
+		};
+		return car;
 	}
 
 });

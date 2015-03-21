@@ -97,6 +97,25 @@ Zepto(function($){
 		});
 	}
 
+	// Update a car
+	function updateCar($id) {
+		console.log('updateCar');
+		$.ajax({
+			type: 'PUT',
+			url: rootURL + 'car/' + $('#id').val(),
+			dataType: 'json',
+			data: $.param(getForm()), // URI encode data for request
+			success: function(data, xhr, type, textStatus) {
+				console.log(data, xhr, type, textStatus);
+				alert('Car successfully updated');
+				findAll(); // reload list
+			},
+			error: function(xhr, type, textStatus, errorThrown) {
+				console.log(xhr, type, errorThrown, textStatus);
+			}
+		});
+	}
+
 	// Render list of all cars
 	function renderList(data) {
 		$('#car-list li').remove();

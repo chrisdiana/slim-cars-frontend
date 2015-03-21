@@ -1,0 +1,25 @@
+.main {
+	margin-top: 25px;
+}
+.detail-view {
+	padding: 20px 25px;
+	margin: 15px 0px;
+	background: #F6F6F6;
+}
+ul#car-list {
+	list-style: none;
+}
+#car-list a {
+	text-decoration: none;
+}
+#car-list li {
+	margin: 0px;
+	padding: 10px 0px 10px 5px;
+	border-bottom: 1px solid #eee;
+}
+#car-list li:hover {
+	background: #f6f6f6;
+}
+#car-list li:last-child {
+	border-bottom: 0px solid #eee;
+}

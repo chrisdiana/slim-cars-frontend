@@ -13,6 +13,9 @@ Zepto(function($){
 	// Retrieve car list when application starts
 	findAll();
 
+	// Nothing to delete in initial application state
+	$('#btnDelete').hide();
+
 	// Retrive car details when list item is clicked
 	$('#car-list a').live('click', function() {
 		findById($(this).data('identity'));
@@ -21,6 +24,12 @@ Zepto(function($){
 	// Call new car function when button is clicked
 	$('#btnAdd').click(function() {
 		newCar();
+		return false;
+	});
+
+	// Call delete car function when button is clicked
+	$('#btnDelete').click(function() {
+		deleteCar();
 		return false;
 	});
 
@@ -114,6 +123,24 @@ Zepto(function($){
 				console.log(xhr, type, errorThrown, textStatus);
 			}
 		});
+	}
+
+	// Delete a car
+	function deleteCar($id) {
+		console.log('deleteCar');
+		$.ajax({
+			type: 'DELETE',
+			url: rootURL + 'car/' + $('#id').val(),
+			success: function(data, xhr, type, textStatus) {
+				console.log(data, xhr, type, textStatus);
+				alert('Car successfully deleted');
+				newCar(); // zero out the form
+				findAll(); // reload list
+			},
+			error: function(xhr, type, textStatus, errorThrown) {
+				console.log(xhr, type, errorThrown, textStatus);
+			}
+		})
 	}
 
 	// Render list of all cars

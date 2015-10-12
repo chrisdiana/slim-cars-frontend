@@ -1,8 +1,8 @@
 # Slim Demo - REST API Frontend
 ---
 
-This is part 2 of the [Getting Started with Slim Framework: Creating a RESTful API](http://cdmedia.github.io/2015/03/20/getting-started-with-slim-framework-pt-2/) post.
-Part 1 is [here](http://cdmedia.github.io/2015/01/27/getting-started-with-slim-framework/).
+This is part 2 of the [Getting Started with Slim Framework: Creating a RESTful API](http://codoki.github.io/2015/03/20/getting-started-with-slim-framework-pt-2/) post.
+Part 1 is [here](http://codoki.github.io/2015/01/27/getting-started-with-slim-framework/).
 You can checkout each step by the staged commits.
 
 ![Slim Frontend Demo](https://raw.githubusercontent.com/cdmedia/cdmedia.github.io/master/public/img/tuts/slim-frontend-api.png)

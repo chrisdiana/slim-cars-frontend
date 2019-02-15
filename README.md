@@ -1,11 +1,11 @@
 # Slim Demo - REST API Frontend
 ---
 
-This is part 2 of the [Getting Started with Slim Framework: Creating a RESTful API](http://codoki.github.io/2015/03/20/getting-started-with-slim-framework-pt-2/) post.
-Part 1 is [here](http://codoki.github.io/2015/01/27/getting-started-with-slim-framework/).
+This is part 2 of the [Getting Started with Slim Framework: Creating a RESTful API](http://chris-diana.com/posts/2015-03-20-getting-started-with-slim-framework-pt-2/) post.
+Part 1 is [here](http://chris-diana.com/posts/2015-01-27-getting-started-with-slim-framework/).
 You can checkout each step by the staged commits.
 
-![Slim Frontend Demo](https://raw.githubusercontent.com/codoki/codoki.github.io/master/public/img/tuts/slim-frontend-api.png)
+![Slim Frontend Demo](https://raw.githubusercontent.com/chrisdiana/slim-cars-frontend/master/screenshot.png)
 
 1. (fcff85b) Setup directory, add Skeleton CSS and Zepto.js
 2. (70d492d) Add API
